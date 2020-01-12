@@ -27,5 +27,22 @@ function rootReducer(state=initialState, action) {
 
 
 ## 3. setting up our actions
+    1. define actions
+    2. created action creator function
+
+```
+export const ADD_TODO = "ADD_TODO";
+
+export function addTodo(todo) {
+    return {type: "ADD_TODO", payload:todo}
+}
+```
+
 
 ## 4. connecting redux with our app
+    1. go to component where you're using redux
+    2. import `connect` function from `react-redux`
+    3. import `addTodo` action creator function
+
+    4. use connect function at export
+    `export default connect(mapStateToProps, {addTodo})(App);`
